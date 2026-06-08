@@ -10,16 +10,19 @@ log()    { echo -e "${BLUE}[VIDOE]${NC} $1"; }
 ok()     { echo -e "${GREEN}[OK]${NC} $1"; }
 warn()   { echo -e "${YELLOW}[WARN]${NC} $1"; }
 err()    { echo -e "${RED}[ERROR]${NC} $1"; exit 1; }
-echo -e "${BLUE}"
-echo "  ██╗   ██╗██╗██████╗  ██████╗ ███████╗"
-echo "  ██║   ██║██║██╔══██╗██╔═══██╗██╔════╝"
-echo "  ██║   ██║██║██║  ██║██║   ██║█████╗  "
-echo "  ╚██╗ ██╔╝██║██║  ██║██║   ██║██╔══╝  "
-echo "   ╚████╔╝ ██║██████╔╝╚██████╔╝███████╗"
-echo "    ╚═══╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝"
-echo -e "${NC}"
-echo -e "${YELLOW}  Multi-source Video Extraction System${NC}"
-echo ""
+
+print_banner() {
+  echo -e "${BLUE}"
+  echo "  ██╗   ██╗██╗██████╗  ██████╗ ███████╗"
+  echo "  ██║   ██║██║██╔══██╗██╔═══██╗██╔════╝"
+  echo "  ██║   ██║██║██║  ██║██║   ██║█████╗  "
+  echo "  ╚██╗ ██╔╝██║██║  ██║██║   ██║██╔══╝  "
+  echo "   ╚████╔╝ ██║██████╔╝╚██████╔╝███████╗"
+  echo "    ╚═══╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝"
+  echo -e "${NC}"
+  echo -e "${YELLOW}  Multi-source Video Extraction System${NC}"
+  echo ""
+}
 
 detect_os() {
   if [ -f /etc/os-release ]; then
@@ -71,6 +74,14 @@ install_deps() {
       fi
       ;;
   esac
+
+  if ! id -nG "$USER" | grep -qw docker; then
+    log "Adding $USER to docker group..."
+    sudo usermod -aG docker "$USER"
+    ok "$USER added to docker group"
+    exec sg docker "$0" --docker-ready
+  fi
+
   ok "Dependencies installed"
 }
 
@@ -81,21 +92,6 @@ check_already_installed() {
   command -v yt-dlp >/dev/null 2>&1  && ok "yt-dlp already installed"  || true
   command -v node >/dev/null 2>&1    && ok "node already installed"    || true
   command -v docker >/dev/null 2>&1  && ok "docker already installed"  || true
-}
-
-ensure_docker_group() {
-  if id -nG "$USER" | grep -qw docker && groups | grep -qw docker; then
-    return 0
-  fi
-
-  if ! id -nG "$USER" | grep -qw docker; then
-    log "Adding $USER to docker group..."
-    sudo usermod -aG docker "$USER"
-    ok "$USER added to docker group"
-  fi
-
-  log "Restarting script with docker group active..."
-  exec sg docker "$0" "$@"
 }
 
 check_docker() {
@@ -122,12 +118,25 @@ launch() {
 
 main() {
   SKIP_DEPS=false
+  DOCKER_READY=false
   for arg in "$@"; do
     case $arg in
-      --skip-deps) SKIP_DEPS=true ;;
+      --skip-deps)    SKIP_DEPS=true ;;
+      --docker-ready) DOCKER_READY=true ;;
     esac
   done
 
+  if [ "$DOCKER_READY" = true ]; then
+    detect_os
+    check_docker
+    echo ""
+    log "Starting VIDOE on http://localhost:35179"
+    echo ""
+    launch
+    return
+  fi
+
+  print_banner
   detect_os
 
   if [ "$SKIP_DEPS" = false ]; then
@@ -136,8 +145,6 @@ main() {
   else
     log "Skipping dependency installation (--skip-deps)"
   fi
-
-  ensure_docker_group "$@"
 
   check_docker
 
