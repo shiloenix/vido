@@ -25,7 +25,7 @@ const Footer = () => {
                 className="h-8 w-auto"
               />
               <span className="font-mono text-sm font-bold tracking-[0.2em] text-amber-400 uppercase">
-                VIDOE
+                VIDO
               </span>
             </a>
             <p className="font-mono text-xs text-white/30 tracking-widest uppercase">
@@ -71,7 +71,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-mono text-xs text-white/20 tracking-wider">
-            © 2026 VIDOE — All rights reserved
+            © 2026 VIDO — All rights reserved
           </p>
           <p className="font-mono text-xs text-white/20 tracking-wider">
             Always respect copyright and platform terms of service

@@ -168,8 +168,8 @@ const Download = () => {
               className="h-25 w-auto"
             />
           <h1 className="font-mono text-3xl md:text-5xl font-bold tracking-tight">
-            <span className="text-white/90">VID</span>
-            <span className="text-amber-400">OE</span>
+            <span className="text-white/90">VI</span>
+            <span className="text-amber-400">DO</span>
           </h1>
           <p className="font-mono text-xs text-white/25 tracking-[0.2em] uppercase">
             Multi-source video extraction system
