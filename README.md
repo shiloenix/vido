@@ -94,7 +94,6 @@ deps
 ### Manual setup without Docker
 
 ```bash
-# Terminal 1 — backend
 cd vido
 npm install 
 npm run dev
