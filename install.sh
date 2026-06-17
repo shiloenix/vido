@@ -112,7 +112,7 @@ check_docker() {
 }
 
 launch() {
-  log "Building and starting VIDO..."
+  log "Building ..."
   docker compose up --build
 }
 
@@ -130,7 +130,7 @@ main() {
     detect_os
     check_docker
     echo ""
-    log "Starting VIDO on http://localhost:35179"
+    log "Starting VIDO on port 35179"
     echo ""
     launch
     return
@@ -149,7 +149,7 @@ main() {
   check_docker
 
   echo ""
-  log "Starting VIDO on http://localhost:35179"
+  log "Starting VIDO on port 35179"
   echo ""
   launch
 }
