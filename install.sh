@@ -32,7 +32,7 @@ detect_os() {
   elif [ "$(uname)" = "Darwin" ]; then
     OS="macos"
   else
-    err "Cannot detect OS. Please install dependencies manually from deps/"
+    err "Cannot detect OS. Please install dependencies manually from packages/"
   fi
 }
 
@@ -58,17 +58,16 @@ install_deps() {
     *)
       if echo "$OS_LIKE" | grep -q "debian"; then
         log "Debian-like OS detected, using debian deps..."
-        bash deps/debian.txt
+        bash packages/debian.txt
       elif echo "$OS_LIKE" | grep -q "arch"; then
         log "Arch-like OS detected, using arch deps..."
-        sudo pacman -Sy --needed python ffmpeg yt-dlp docker docker-compose nodejs npm
-        sudo systemctl enable --now docker
+        bash packages/arch.txt
       elif echo "$OS_LIKE" | grep -q "fedora"; then
         log "Fedora-like OS detected, using fedora deps..."
-        bash deps/fedora.txt
+        bash packages/fedora.txt
       else
         warn "Unknown OS: $OS"
-        warn "Please install dependencies manually from deps/"
+        warn "Please install dependencies manually from packages/"
         warn "Then re-run this script with --skip-deps"
         exit 1
       fi
