@@ -136,6 +136,3 @@ Update yt-dlp on the host: `pip install yt-dlp --upgrade` or `sudo pacman -Sy yt
 
 ---
 
-## License
-
-MIT — free to use, modify, and self-host.
