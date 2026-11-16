@@ -11,20 +11,20 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
     : done
     ? "bg-emerald-400"
     : paused
-    ? "bg-amber-300/50"
-    : "bg-amber-400";
+    ? "bg-gray-300/50"
+    : "bg-gray-400";
 
   const borderColor = error
     ? "border-red-500/30"
     : done
     ? "border-emerald-400/30"
-    : "border-amber-500/20";
+    : "border-gray-500/20";
 
   const cornerColor = done
     ? "border-emerald-400/60"
     : error
     ? "border-red-500/60"
-    : "border-amber-500/60";
+    : "border-gray-500/60";
 
   return (
     <div className={`relative border ${borderColor} bg-black/30`}>
@@ -40,11 +40,11 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
             {error && <TbAlertTriangle className="size-3.5 text-red-400" />}
             {downloading && !paused && (
               <span className="relative flex size-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60" />
-                <span className="relative inline-flex rounded-full size-1.5 bg-amber-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-60" />
+                <span className="relative inline-flex rounded-full size-1.5 bg-gray-500" />
               </span>
             )}
-            {paused && <span className="relative inline-flex rounded-full size-1.5 bg-amber-300/50" />}
+            {paused && <span className="relative inline-flex rounded-full size-1.5 bg-gray-300/50" />}
 
             <span
               className={`text-xs tracking-widest uppercase ${
@@ -53,8 +53,8 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
                   : error
                   ? "text-red-400"
                   : paused
-                  ? "text-amber-300/60"
-                  : "text-amber-400"
+                  ? "text-gray-300/60"
+                  : "text-gray-400"
               }`}
             >
               {done ? "Transfer complete" : error ? "Transfer failed" : paused ? "Paused" : "Transferring…"}
@@ -64,7 +64,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
           <div className="flex items-center gap-2">
             <span
               className={`text-xs font-bold ${
-                done ? "text-emerald-400" : error ? "text-red-400" : "text-amber-300"
+                done ? "text-emerald-400" : error ? "text-red-400" : "text-gray-300"
               }`}
             >
               {percent.toFixed(1)}%
@@ -74,7 +74,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
               <button
                 onClick={onPause}
                 title={paused ? "Resume" : "Pause"}
-                className="flex items-center gap-1 px-2 py-1 text-xs tracking-widest uppercase border border-amber-500/30 text-amber-400/70 hover:text-amber-300 hover:border-amber-400/50 transition-all"
+                className="flex items-center gap-1 px-2 py-1 text-xs tracking-widest uppercase border border-gray-500/30 text-gray-400/70 hover:text-gray-300 hover:border-gray-400/50 transition-all"
               >
                 {paused ? <TbPlayerPlay className="size-3" /> : <TbPlayerPause className="size-3" />}
               </button>
@@ -94,7 +94,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
 
         <div className="relative h-1.5 bg-white/5 overflow-hidden mb-2.5">
           {downloading && !paused && (
-            <div className="absolute inset-y-0 left-0 bg-amber-500/10 animate-pulse" style={{ width: "100%" }} />
+            <div className="absolute inset-y-0 left-0 bg-gray-500/10 animate-pulse" style={{ width: "100%" }} />
           )}
           <div
             className={`absolute inset-y-0 left-0 transition-all duration-500 ease-out ${color}`}
@@ -120,7 +120,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
             </div>
             <div className="flex-1 text-right">
               <p className="text-xs text-white/25 uppercase tracking-widest mb-0.5">Status</p>
-              <p className={`text-xs ${paused ? "text-amber-300/40" : "text-amber-500/60 animate-pulse"}`}>
+              <p className={`text-xs ${paused ? "text-gray-300/40" : "text-gray-500/60 animate-pulse"}`}>
                 {paused ? "Paused" : "Live"}
               </p>
             </div>

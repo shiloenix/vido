@@ -22,18 +22,18 @@ const ConfirmModal = ({ title, format, loading, onCancel, onConfirm }) => (
     <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={!loading ? onCancel : undefined} />
 
     <div className="relative w-full max-w-md">
-      <span className="absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 border-amber-500/60" />
-      <span className="absolute -top-px -right-px w-4 h-4 border-t-2 border-r-2 border-amber-500/60" />
-      <span className="absolute -bottom-px -left-px w-4 h-4 border-b-2 border-l-2 border-amber-500/60" />
-      <span className="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-amber-500/60" />
+      <span className="absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 border-gray-500/60" />
+      <span className="absolute -top-px -right-px w-4 h-4 border-t-2 border-r-2 border-gray-500/60" />
+      <span className="absolute -bottom-px -left-px w-4 h-4 border-b-2 border-l-2 border-gray-500/60" />
+      <span className="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-gray-500/60" />
 
-      <div className="bg-[#0a0f14] border border-amber-500/20 p-6 flex flex-col gap-4">
-        <p className="text-xs text-amber-500/60 tracking-widest uppercase">Confirm</p>
+      <div className="bg-[#0a0f14] border border-gray-500/20 p-6 flex flex-col gap-4">
+        <p className="text-xs text-gray-500/60 tracking-widest uppercase">Confirm</p>
 
         <p className="text-white/80 text-sm leading-snug line-clamp-2">{title}</p>
 
-        <div className="flex items-center gap-2 px-3 py-2 bg-amber-500/5 border border-amber-500/15 w-fit">
-          <span className="text-xs text-amber-300 tracking-wide">
+        <div className="flex items-center gap-2 px-3 py-2 bg-gray-500/5 border border-gray-500/15 w-fit">
+          <span className="text-xs text-gray-300 tracking-wide">
             {format?.label || format?.id}
           </span>
           {format?.filesizeLabel && (
@@ -53,7 +53,7 @@ const ConfirmModal = ({ title, format, loading, onCancel, onConfirm }) => (
           <button
             onClick={onConfirm}
             disabled={loading}
-            className="flex-1 flex items-center justify-center gap-2 py-2.5 text-xs tracking-widest uppercase border border-amber-500/50 text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 transition-all disabled:opacity-50"
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 text-xs tracking-widest uppercase border border-gray-500/50 text-gray-300 bg-gray-500/10 hover:bg-gray-500/20 transition-all disabled:opacity-50"
           >
             {loading ? <TbLoader2 className="size-3.5 animate-spin" /> : null}
             {loading ? "Starting…" : "Download"}
@@ -141,14 +141,14 @@ const Download = () => {
           backgroundSize: "40px 40px",
         }}
       />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100 bg-gray-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center px-4 pt-25 pb-20 gap-10">
         <div className="flex flex-col items-center gap-3 text-center">
-          <img src="/vex.svg" alt="" className="h-25 w-auto" />
+          <img src="/.png" alt="" className="h-25 w-auto" />
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
             <span className="text-white/90">VI</span>
-            <span className="text-amber-400">DO</span>
+            <span className="text-gray-400">DO</span>
           </h1>
           <p className="text-xs text-white/25 tracking-[0.2em] uppercase">
             Multi-source video extraction system

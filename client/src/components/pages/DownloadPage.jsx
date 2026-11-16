@@ -31,8 +31,8 @@ const statusMeta = {
   done: { icon: TbCheck, color: "text-emerald-400", label: "Done" },
   error: { icon: TbAlertTriangle, color: "text-red-400", label: "Failed" },
   cancelled: { icon: TbX, color: "text-white/30", label: "Cancelled" },
-  downloading: { icon: TbLoader2, color: "text-amber-400", label: "Downloading", spin: true },
-  paused: { icon: TbPlayerPause, color: "text-amber-300/60", label: "Paused" },
+  downloading: { icon: TbLoader2, color: "text-gray-400", label: "Downloading", spin: true },
+  paused: { icon: TbPlayerPause, color: "text-gray-300/60", label: "Paused" },
 };
 
 const ACTIVE_STATUSES = ["downloading", "paused"];
@@ -165,45 +165,45 @@ const DownloadPage = () => {
           backgroundSize: "40px 40px",
         }}
       />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100 bg-gray-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center px-4 pt-32 pb-20 gap-8">
         <div className="flex flex-col items-center gap-3 text-center">
           <div className="flex items-center gap-3">
-            <TbHistory className="size-10 text-amber-400" />
+            <TbHistory className="size-10 text-gray-400" />
           </div>
           <p className="text-xs text-white/25 tracking-[0.2em] uppercase">
             {loading
               ? "Loading…"
               : `${items.length} extraction${items.length !== 1 ? "s" : ""} logged`}
-            {activeCount > 0 && <span className="text-amber-400/70"> · {activeCount} active</span>}
+            {activeCount > 0 && <span className="text-gray-400/70"> · {activeCount} active</span>}
           </p>
         </div>
 
         <div className="w-full max-w-4xl relative">
           {items.length > 0 ? (
             <>
-              <span className="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-amber-500/40" />
-              <span className="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-amber-500/40" />
-              <span className="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-amber-500/40" />
-              <span className="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-amber-500/40" />
+              <span className="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-gray-500/40" />
+              <span className="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-gray-500/40" />
+              <span className="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-gray-500/40" />
+              <span className="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-gray-500/40" />
 
-              <div className="border border-amber-500/15 bg-black/40 backdrop-blur-sm divide-y divide-white/5">
+              <div className="border border-gray-500/15 bg-black/40 backdrop-blur-sm divide-y divide-white/5">
                 <div className="flex items-center gap-3 px-4 py-2 bg-white/2">
-                  <span className="text-xs text-amber-500/40 tracking-widest uppercase flex-1">
+                  <span className="text-xs text-gray-500/40 tracking-widest uppercase flex-1">
                     Title
                   </span>
-                  <span className="text-xs text-amber-500/40 tracking-widest uppercase w-24 text-right hidden sm:block">
+                  <span className="text-xs text-gray-500/40 tracking-widest uppercase w-24 text-right hidden sm:block">
                     Status
                   </span>
-                  <span className="text-xs text-amber-500/40 tracking-widest uppercase w-20 text-right hidden sm:block">
+                  <span className="text-xs text-gray-500/40 tracking-widest uppercase w-20 text-right hidden sm:block">
                     When
                   </span>
                   <span className="w-16 flex justify-end">
                     <button
                       onClick={handleClearAll}
                       title="Clear all"
-                      className="p-1 text-amber-500/40 hover:text-red-400 transition-colors"
+                      className="p-1 text-gray-500/40 hover:text-red-400 transition-colors"
                     >
                       <TbTrash className="size-3.5" />
                     </button>
@@ -257,7 +257,7 @@ const DownloadPage = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               title="Open source"
-                              className="p-1.5 text-white/20 hover:text-amber-400 transition-colors"
+                              className="p-1.5 text-white/20 hover:text-gray-400 transition-colors"
                             >
                               <TbExternalLink className="size-3.5" />
                             </a>

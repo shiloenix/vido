@@ -16,11 +16,11 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
   if (isActive) {
     return (
       <div className="w-full max-w-2xl relative">
-        <span className="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-amber-500/60" />
-        <span className="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-amber-500/60" />
-        <span className="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-amber-500/60" />
-        <span className="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-amber-500/60" />
-        <div className="bg-black/40 border border-amber-500/20 backdrop-blur-sm flex items-center gap-4 px-4 py-3">
+        <span className="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-gray-500/60" />
+        <span className="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-gray-500/60" />
+        <span className="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-gray-500/60" />
+        <span className="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-gray-500/60" />
+        <div className="bg-black/40 border border-gray-500/20 backdrop-blur-sm flex items-center gap-4 px-4 py-3">
           {info.thumbnail && (
             <img
               src={info.thumbnail}
@@ -42,17 +42,17 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
 
   return (
     <div className="w-full max-w-2xl relative">
-      <span className="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-amber-500/60" />
-      <span className="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-amber-500/60" />
-      <span className="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-amber-500/60" />
-      <span className="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-amber-500/60" />
+      <span className="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-gray-500/60" />
+      <span className="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-gray-500/60" />
+      <span className="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-gray-500/60" />
+      <span className="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-gray-500/60" />
 
-      <div className="bg-black/40 border border-amber-500/20 backdrop-blur-sm">
+      <div className="bg-black/40 border border-gray-500/20 backdrop-blur-sm">
         <div className="flex items-center gap-3 px-4 py-2 border-b border-white/5 bg-white/2">
-          <span className="text-xs text-amber-500/60 tracking-widest uppercase">
+          <span className="text-xs text-gray-500/60 tracking-widest uppercase">
             Target acquired
           </span>
-          <span className="flex-1 h-px bg-amber-500/10" />
+          <span className="flex-1 h-px bg-gray-500/10" />
           <span className="text-xs text-white/20">
             {info.formats?.length ?? 0} formats
           </span>
@@ -70,8 +70,8 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
                     "polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))",
                 }}
               />
-              <span className="absolute top-0 right-0 w-2 h-2 border-t border-r border-amber-400/80" />
-              <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-amber-400/80" />
+              <span className="absolute top-0 right-0 w-2 h-2 border-t border-r border-gray-400/80" />
+              <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-gray-400/80" />
             </div>
           )}
 
@@ -83,7 +83,7 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
               href={info.webpage_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-xs text-amber-500/60 hover:text-amber-400 transition-colors w-fit"
+              className="flex items-center gap-1 text-xs text-gray-500/60 hover:text-gray-400 transition-colors w-fit"
             >
               <TbExternalLink className="size-3" />
               source
@@ -106,7 +106,7 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
               className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-xs tracking-widest uppercase transition-all
                 ${
                   tab === key
-                    ? "text-amber-300 bg-amber-500/8 border-b-2 border-amber-400"
+                    ? "text-gray-300 bg-gray-500/8 border-b-2 border-gray-400"
                     : "text-white/30 hover:text-white/50 border-b-2 border-transparent"
                 }`}
             >
@@ -124,13 +124,13 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
               className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all
                 ${
                   selectedFormat === f.id
-                    ? "bg-amber-500/10 text-white"
+                    ? "bg-gray-500/10 text-white"
                     : "text-white/40 hover:text-white/70 hover:bg-white/3"
                 }`}
             >
               <span
                 className={`w-1.5 h-1.5 rounded-full shrink-0 transition-all ${
-                  selectedFormat === f.id ? "bg-amber-400" : "bg-white/15"
+                  selectedFormat === f.id ? "bg-gray-400" : "bg-white/15"
                 }`}
               />
 
@@ -141,7 +141,7 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
               <span
                 className={`text-xs px-1.5 py-0.5 border ${
                   selectedFormat === f.id
-                    ? "border-amber-500/50 text-amber-400"
+                    ? "border-gray-500/50 text-gray-400"
                     : "border-white/10 text-white/30"
                 }`}
               >
@@ -175,8 +175,8 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
               border transition-all duration-300 active:scale-[0.98]
               ${
                 downloading
-                  ? "border-amber-500/30 text-amber-500/50 bg-amber-500/5 cursor-not-allowed"
-                  : "border-amber-500/50 text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 hover:border-amber-400"
+                  ? "border-gray-500/30 text-gray-500/50 bg-gray-500/5 cursor-not-allowed"
+                  : "border-gray-500/50 text-gray-300 bg-gray-500/10 hover:bg-gray-500/20 hover:border-gray-400"
               }`}
           >
             {downloading ? (

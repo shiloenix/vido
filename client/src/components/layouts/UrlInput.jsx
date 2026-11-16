@@ -13,13 +13,13 @@ const UrlInput = ({ onFetch, loading }) => {
   return (
     <div className="w-full flex flex-col items-center gap-4">
       <div className="relative w-full max-w-2xl">
-        <span className={`absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 transition-colors duration-300 ${focused ? "border-amber-400" : "border-white/20"}`} />
-        <span className={`absolute -top-px -right-px w-4 h-4 border-t-2 border-r-2 transition-colors duration-300 ${focused ? "border-amber-400" : "border-white/20"}`} />
-        <span className={`absolute -bottom-px -left-px w-4 h-4 border-b-2 border-l-2 transition-colors duration-300 ${focused ? "border-amber-400" : "border-white/20"}`} />
-        <span className={`absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 transition-colors duration-300 ${focused ? "border-amber-400" : "border-white/20"}`} />
+        <span className={`absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 transition-colors duration-300 ${focused ? "border-gray-400" : "border-white/20"}`} />
+        <span className={`absolute -top-px -right-px w-4 h-4 border-t-2 border-r-2 transition-colors duration-300 ${focused ? "border-gray-400" : "border-white/20"}`} />
+        <span className={`absolute -bottom-px -left-px w-4 h-4 border-b-2 border-l-2 transition-colors duration-300 ${focused ? "border-gray-400" : "border-white/20"}`} />
+        <span className={`absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 transition-colors duration-300 ${focused ? "border-gray-400" : "border-white/20"}`} />
 
         <div className="flex items-center bg-white/3 border border-white/10 backdrop-blur-sm">
-          <span className="text-xs text-amber-500/70 pl-4 pr-3 select-none tracking-widest whitespace-nowrap drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
+          <span className="text-xs text-gray-500/70 pl-4 pr-3 select-none tracking-widest whitespace-nowrap drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
             URL://
           </span>
 
@@ -37,8 +37,8 @@ const UrlInput = ({ onFetch, loading }) => {
             onClick={handleSubmit}
             disabled={!url.trim() || loading}
             className="flex items-center gap-2 px-5 py-4 text-xs tracking-widest uppercase
-              bg-amber-500/10 hover:bg-amber-500/20 border-l border-amber-500/20
-              text-amber-400 hover:text-amber-300
+              bg-gray-500/10 hover:bg-gray-500/20 border-l border-gray-500/20
+              text-gray-400 hover:text-gray-300
               disabled:opacity-30 disabled:cursor-not-allowed
               transition-all duration-200 active:scale-95
               shadow-[0_0_15px_rgba(251,191,36,0.15)]"
@@ -58,7 +58,7 @@ const UrlInput = ({ onFetch, loading }) => {
           href="https://www.youtube.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-400 transition-colors"
+          className="hover:text-gray-400 transition-colors"
         >
           Youtube
         </a>
@@ -67,7 +67,7 @@ const UrlInput = ({ onFetch, loading }) => {
           href="https://x.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-400 transition-colors"
+          className="hover:text-gray-400 transition-colors"
         >
           Twitter
         </a>
@@ -76,7 +76,7 @@ const UrlInput = ({ onFetch, loading }) => {
           href="https://www.facebook.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-400 transition-colors"
+          className="hover:text-gray-400 transition-colors"
         >
           Facebook  
         </a>
@@ -85,7 +85,7 @@ const UrlInput = ({ onFetch, loading }) => {
           href="https://www.instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-400 transition-colors"
+          className="hover:text-gray-400 transition-colors"
         >
           Instagram
         </a>
@@ -94,7 +94,7 @@ const UrlInput = ({ onFetch, loading }) => {
           href="https://www.tiktok.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-400 transition-colors"
+          className="hover:text-gray-400 transition-colors"
         >
           TikTok
         </a>
@@ -103,7 +103,7 @@ const UrlInput = ({ onFetch, loading }) => {
           href="https://www.google.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-400 transition-colors"
+          className="hover:text-gray-400 transition-colors"
         >
           {"1800+ "}
         </a>

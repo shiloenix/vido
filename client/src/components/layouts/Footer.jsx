@@ -11,8 +11,8 @@ const PLATFORM_LINKS = {
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-amber-500/10 bg-black/90 backdrop-blur-sm">
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-500/30 to-transparent" />
+    <footer className="relative border-t border-gray-500/10 bg-black/90 backdrop-blur-sm">
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gray-500/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -20,11 +20,11 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start gap-1.5">
             <a href="/" className="flex items-center gap-0">
               <img
-                src="/vex.svg"
+                src="/.png"
                 alt=""
                 className="h-8 w-auto"
               />
-              <span className="text-sm font-bold tracking-[0.2em] text-amber-400 uppercase">
+              <span className="text-sm font-bold tracking-[0.2em] text-gray-400 uppercase">
                 VIDO
               </span>
             </a>
@@ -44,7 +44,7 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-white/35 hover:text-amber-400/60 transition-colors"
+                  className="text-xs text-white/35 hover:text-gray-400/60 transition-colors"
                 >
                   {site}
                 </a>
@@ -59,7 +59,7 @@ const Footer = () => {
                 href="https://github.com/yt-dlp/yt-dlp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-500/50 hover:text-amber-400 transition-colors flex items-center gap-1"
+                className="text-gray-500/50 hover:text-gray-400 transition-colors flex items-center gap-1"
               >
                 <TbBrandGithub className="size-3" />
                 yt-dlp
